@@ -7,7 +7,7 @@ const {
 } = require('./help')
 
 const execute = require(fileToExecute);
-const provider = require('./providers/hello')
+const provider = require(`./${execute.name}.provider`);
 
 let output = []
 let hasError = false;
