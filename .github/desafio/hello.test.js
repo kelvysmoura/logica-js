@@ -1,29 +1,13 @@
 
 const fileToExecute = process.env.KMP_FILE_EXECUTE;
 
-const assert = require('assert');
-const md = require('./md-msg')
+const {
+  assert, 
+  mdmsg
+} = require('./help')
+
 const execute = require(fileToExecute);
 const provider = require('./providers/hello')
-
-const convertParams = item => {
-  
-  switch (typeof item) {
-    case 'string':
-      item = `"${item}"`;  
-      break;
-
-    case 'object':
-      item = JSON.stringify(item)
-      break;
-  
-    default:
-      item = `${item}`
-      break;
-  }
-
-  return item;
-}
 
 let output = []
 let hasError = false;
@@ -33,28 +17,17 @@ try {
 
     const { params, expected } = testCase;
 
-    output.push(
-      md.running(`Executando ${execute.name}(${params.map(convertParams).join(', ')})`)
-    )
+    output.push(mdmsg.running(execute, params))
 
     let result = execute(...params)
 
-    assert.strictEqual(
-      result,
-      expected,
-      `A função deveria retornar: "${expected}"\nValor retornado: "${result}"`
-    )
+    assert(result, expected);
 
-    output.push(
-      md.success(`Resultado: ${result}`)
-    )
+    output.push(mdmsg.success(result))
   })
 } catch (error) {
-  
-  output.push(md.warning())
-  
+  output.push(mdmsg.warning())
   output.push(error.message)
-  
   hasError = true
 }
 
@@ -64,4 +37,4 @@ if (hasError) {
   process.exit(1)
 }
 
-md.challengeWithSuccess()
+mdmsg.challengeWithSuccess()
