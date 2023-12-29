@@ -3,6 +3,7 @@ const runningIcon = ':arrow_forward:'
 const successIcon = ':white_check_mark:'
 const warningIcon = ':monocle_face:'
 const errorIcon = ':heavy_exclamation_mark:'
+const clapIcon = ':clap:';
 
 module.exports = {
   
@@ -16,12 +17,16 @@ module.exports = {
     return msg;
   },
 
-  warning(msg) {
+  warning(msg = "Algo de erro não está certo") {
     return `${warningIcon} ${msg}`
   },
 
   success(msg) {
     return `${successIcon} ${msg}`
+  },
+
+  challengeWithSuccess(msg = "\n### Desafio concluido com sucesso!") {
+    this.exit(`${msg} ${clapIcon.repeat(3)}`, 0)
   },
 
   running(msg) {
