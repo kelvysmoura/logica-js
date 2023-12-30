@@ -23,6 +23,10 @@ module.exports = [
     expected: 1
   },
   {
+    params: [-2],
+    expected: error
+  },
+  {
     params: ["texto"],
     expected: error
   },
