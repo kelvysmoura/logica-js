@@ -15,6 +15,14 @@ module.exports = [
     expected: 6
   },
   {
+    params: [0],
+    expected: 1
+  },
+  {
+    params: [1],
+    expected: 1
+  },
+  {
     params: ["texto"],
     expected: error
   },
