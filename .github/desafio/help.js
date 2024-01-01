@@ -60,7 +60,7 @@ const mdmsg = {
   },
 
   running(func, params) {
-    return `${runningIcon} ${func.name}(${params.map(convertParams).join(', ')})`
+    return `${runningIcon} ${func.name}(${params.map(convertParams).join(', ')}); `
   },
 
   pure(msg) {
