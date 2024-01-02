@@ -9,12 +9,13 @@ on:
 
 jobs:
   
+
   running-task:
     name: "Verificando requisitos..."
     runs-on: ubuntu-latest
 
     env:
-      KMP_BRACHES_MERGE_MASTER: ""
+      KMP_BRACHES_MERGE_MASTER: "hello,soma,soma_impar,inverte_lista,vogais,fatorial,apenas_par,temperatura,palindromo,inverte_soma_itens,cartaodecredito,cpf"
       KMP_SETUP_JS: "${{ github.workspace }}/.github/desafio/setup.js"
       KMP_FILE_TEST: "${{ github.workspace }}/.github/desafio/${{ github.head_ref }}.test.js"
       KMP_FILE_EXECUTE: "${{ github.workspace }}/src/${{ github.head_ref }}.js"
