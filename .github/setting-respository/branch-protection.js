@@ -19,7 +19,7 @@ const method = 'PUT';
       throw new Error(JSON.stringify(json));
     }
 
-    console.log(body)
+    console.log(json)
 
   } catch (error) {
     console.log("- error: " + error.message);
