@@ -1,4 +1,4 @@
-> Objetivo desse desafio é criar um algoritmo faça a soma de dois números
+> Objetivo desse desafio é criar um algoritmo que faça a soma de dois números
 
 ### Comece por aqui
 1. Clonar o projeto (se não tiver clonado ainda)
