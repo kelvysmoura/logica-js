@@ -31,7 +31,7 @@ let resultado = inverte_soma_itens(arrayOriginal);
 1. O array original precisa ser invertido `[5,6,7,8] -> [8,7,6,5]`
 2. Cada item do novo array precisa ser somado com a sua posição do array original mais uma constante que vai ser sempre 2
 
-|  Item orignal | Índice original | Constante | Item do novo array | Índice no novo array |
+|  Item orignal | Posição original | Constante | Item do novo array | Índice no novo array |
 |-|-|-|-|-|
 | 8 | +3 | +2 | **13** | 0 |
 | 7 | +2 | +2 | **11** | 1 |
