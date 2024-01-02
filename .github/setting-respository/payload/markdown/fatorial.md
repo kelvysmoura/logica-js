@@ -1,4 +1,4 @@
-Objetivo desse desafio é criar um algoritmo que faz o cálculo fatorial de um determinado número
+> Objetivo desse desafio é criar um algoritmo que faz o cálculo fatorial de um determinado número
 
 ### Comece por aqui
 1. Clonar o projeto (se não tiver clonado ainda)
@@ -12,6 +12,6 @@ Objetivo desse desafio é criar um algoritmo que faz o cálculo fatorial de um d
 3. A função deve aceitar como argumento um número inteiro positivo
 4. A função deve retornar o resultado do cálculo fatorial
 5. A mensagem de erro "Função deve receber um argumento do tipo inteiro positivo." deve ser retornada quando
-  - A função receber um valor numérico não inteiro
-  - A função receber um valor numérico menor que 0
-  - A função receber um valor não numérico
+    - A função receber um valor numérico não inteiro
+    - A função receber um valor numérico menor que 0
+    - A função receber um valor não numérico

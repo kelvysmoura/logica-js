@@ -1,4 +1,4 @@
-Objetivo desse desafio é criar um algoritmo que recebe um texto e retorna a quantidade de vogais que existem no texto
+> Objetivo desse desafio é criar um algoritmo que recebe um texto e retorna a quantidade de vogais que existem no texto
 
 ### Comece por aqui
 1. Clonar o projeto (se não tiver clonado ainda)
@@ -12,4 +12,4 @@ Objetivo desse desafio é criar um algoritmo que recebe um texto e retorna a qua
 3. A função deve receber um texto como argumento
 4. A função deve retornar a quantidade de vogais encontradas no texto
 5. A mensagem de erro "Função aceita apenas string como argumento." deve ser retornada quando
-  - A função receber como argumento qualquer valor diferente de string
+    - A função receber como argumento qualquer valor diferente de string

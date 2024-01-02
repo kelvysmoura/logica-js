@@ -12,5 +12,5 @@
 3. A função deve receber como argumento um valor do tipo Array
 4. A função deve retornar um novo array com os mesmo valores do array original porém na ordem inversa
 5. A mensagem de erro "Argumento inválido. Função espera receber um array como argumento." deve ser retornada quando
-  - A função for chamada sem argumentos
-  - O argumento passado não for do tipo array
+    - A função for chamada sem argumentos
+    - O argumento passado não for do tipo array

@@ -1,5 +1,5 @@
-O objetivo desse desafio é entender a dinâmica dos próximos desafios. 
-Para esse desafio você vai precisar criar uma função que retorna uma saudação de Hello.
+> O objetivo desse desafio é entender a dinâmica dos próximos desafios. 
+> Para esse desafio você vai precisar criar uma função que retorna uma saudação de Hello.
 
 ### Comece por aqui
 1. Clonar o projeto (se não tiver clonado ainda)

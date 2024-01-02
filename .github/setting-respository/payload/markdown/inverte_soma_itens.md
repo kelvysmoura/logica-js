@@ -13,10 +13,10 @@
 3. A função deve receber como argumento um valor do tipo Array com apenas numeros
 4. A função deve retornar um novo array com os mesmo valores do array original porém na ordem inversa e somando o número 2 com a posição atual e o valor da posição
 5. A mensagem de erro "Argumento passado deve ser um array só com números." deve ser retornada quando
-  - O array passado por argumento estiver qualquer item que não seja do tipo number
+    - O array passado por argumento estiver qualquer item que não seja do tipo number
 6. A mensagem de erro "Argumento inválido." deve ser retornada quando
-  - O argumento for um array vazio
-  - O argumento não for do tipo array
+    - O argumento for um array vazio
+    - O argumento não for do tipo array
 
 ### Exemplo
 ```js

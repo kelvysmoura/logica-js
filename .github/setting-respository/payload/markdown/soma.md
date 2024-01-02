@@ -1,4 +1,4 @@
-Objetivo desse desafio é criar um algoritmo faça a soma de dois números
+> Objetivo desse desafio é criar um algoritmo faça a soma de dois números
 
 ### Comece por aqui
 1. Clonar o projeto (se não tiver clonado ainda)
@@ -13,6 +13,6 @@ Objetivo desse desafio é criar um algoritmo faça a soma de dois números
 4. A função deve retornar o resultado da soma entre os dois parâmetros
 5. A função deve garantir que os parâmetros serão somados e não concatenados
 6. A mensagem de erro "Parâmetros inválidos!" deve ser retornada quando
-  - A função receber apenas o primeiro parâmetro
-  - O primeiro parâmetro não puder ser convertido em um número inteiro
-  - O segundo parâmetro não puder ser convertido em um número inteiro
+    - A função receber apenas o primeiro parâmetro
+    - O primeiro parâmetro não puder ser convertido em um número inteiro
+    - O segundo parâmetro não puder ser convertido em um número inteiro
