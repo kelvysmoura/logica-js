@@ -35,5 +35,9 @@ module.exports = [
   {
     params: [false],
     expected: "Hello, World!"
+  },
+  {
+    params: [],
+    expected: "Hello, World!"
   }
 ];
