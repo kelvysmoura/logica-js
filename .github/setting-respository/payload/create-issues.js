@@ -6,7 +6,7 @@ const mdPath = `${__dirname}/markdown`;
 const sufix = fs.readFileSync(mdPath + '/sufix.md', 'utf8')
 
 const issues = {
-	hello: "Comece por aqui (1.5)",
+	hello: "Hello World (1.5)",
 	soma: "Somar dois números (2.5)",
 	soma_impar: "Somar apenas os números ímpares (2.5)",
 	inverte_lista: "Inverter lista (2.75)",
