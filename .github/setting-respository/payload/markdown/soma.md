@@ -16,5 +16,3 @@ Objetivo desse desafio é criar um algoritmo faça a soma de dois números
   - A função receber apenas o primeiro parâmetro
   - O primeiro parâmetro não puder ser convertido em um número inteiro
   - O segundo parâmetro não puder ser convertido em um número inteiro
-
-

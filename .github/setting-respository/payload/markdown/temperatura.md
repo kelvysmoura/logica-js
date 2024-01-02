@@ -16,3 +16,4 @@ Objetivo desse desafio é criar um algoritmo que converte uma temperatura em °C
 1. A mensagem de erro "Temperatura inválida!" deve ser retornada quando
   - O primeiro argumento não for uma string  
   - O primeiro argumento possuir um sufixo diferente de C ou F
+  

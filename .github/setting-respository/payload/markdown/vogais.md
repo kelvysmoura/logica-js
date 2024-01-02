@@ -13,4 +13,3 @@ Objetivo desse desafio é criar um algoritmo que recebe um texto e retorna a qua
 4. A função deve retornar a quantidade de vogais encontradas no texto
 5. A mensagem de erro "Função aceita apenas string como argumento." deve ser retornada quando
   - A função receber como argumento qualquer valor diferente de string
-
