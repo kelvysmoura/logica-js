@@ -1,0 +1,42 @@
+name: Setting repository
+
+on: create
+
+jobs:
+  
+  setting:
+    name: "Settings"
+    runs-on: ubuntu-latest
+    env:
+      KMP_SETTING_REPOSITORY: "${{ github.workspace }}/.github/setting-respository"
+      GITHUB_TOKEN: ${{ secrets.GHT }}
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Export initial commit
+        run: | 
+          export KMP_INITIAL_COMMIT=$(git rev-list --max-parents=0 HEAD)
+          echo "KMP_INITIAL_COMMIT=$KMP_INITIAL_COMMIT" >> $GITHUB_ENV
+          
+      - name: Branch protection
+        run: node $KMP_SETTING_REPOSITORY/branch-protection.js
+      
+      - name: Create issues 
+        run: node $KMP_SETTING_REPOSITORY/create-issues.js
+
+      - name: Debug
+        run: |
+          git log --format="Commit atual: %H%nCommit pai:%P%nCommit msg: %s%nAnotações de quem fez o commit:%N%n" -n 1 $GITHUB_SHA >> $GITHUB_STEP_SUMMARY
+          echo '<hr>' >> $GITHUB_STEP_SUMMARY
+          git rev-list --max-parents=0 HEAD >> $GITHUB_STEP_SUMMARY
+          echo '<hr>' >> $GITHUB_STEP_SUMMARY
+          env >> env.txt 
+          cat env.txt >> $GITHUB_STEP_SUMMARY
+          
+      
+    
