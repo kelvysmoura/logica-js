@@ -17,6 +17,8 @@ const api = require('./api');
       if (statusCode < 200 || statusCode > 299) {
         throw new Error(JSON.stringify(json));
       }
+
+      console.log(json)
     })
 
   } catch (error) {
