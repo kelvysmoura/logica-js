@@ -27,7 +27,6 @@ jobs:
         run: node $KMP_SETTING_REPOSITORY/branch-protection.js
       
       - name: Create issues 
-        if: false
         run: node $KMP_SETTING_REPOSITORY/create-issues.js
 
       - name: Debug
