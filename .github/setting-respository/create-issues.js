@@ -7,7 +7,7 @@ const api = require('./api');
 
     const issuesPayload = require('./payload/create-issues');
 
-    issuesPayload.forEach(async item => {
+    for (let item of issuesPayload) {
 
       const request = await api.createIssue(item);  
       const statusCode = parseInt(request.status);
@@ -19,7 +19,7 @@ const api = require('./api');
       }
 
       console.log(json)
-    })
+    }
 
   } catch (error) {
     console.log("# error: " + error.message);
