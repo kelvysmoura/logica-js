@@ -20,12 +20,11 @@ const issues = {
 	cpf: "Validar cpf (6.75)",
 }
 
-let payload = [];
-for (let id in issues) {
-	payload.push({
+let issuesId = Object.getOwnPropertyNames(issues);
+
+module.exports = issuesId.reverse().map(id => {
+	return {
 		title: issues[id],
 		body: fs.readFileSync(`${mdPath}/${id}.md`) + sufix
-	})
-}
-
-module.exports = payload;
+	}
+});
