@@ -9,16 +9,16 @@ module.exports = {
     'Authorization': `Bearer ${token}`
   },
 
-  branchProtection(body) {
-    return fetch(`${url}/repos/${repository}/branches/master/protection`, {
+  async branchProtection(body) {
+    return await fetch(`${url}/repos/${repository}/branches/master/protection`, {
       method: 'PUT',
       headers: this.headers,
       body: JSON.stringify(body)
     });
   },
 
-  createIssue(body) {
-    return fetch(`${url}/repos/${repository}/issues`, {
+  async createIssue(body) {
+    return await fetch(`${url}/repos/${repository}/issues`, {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify(body)
