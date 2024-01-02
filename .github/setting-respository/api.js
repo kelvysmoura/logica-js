@@ -12,7 +12,7 @@ module.exports = {
   branchProtection(body) {
     return fetch(`${url}/repos/${repository}/branches/master/protection`, {
       method: 'PUT',
-      headers,
+      headers: this.headers,
       body: JSON.stringify(body)
     });
   },
@@ -20,7 +20,7 @@ module.exports = {
   createIssue(body) {
     return fetch(`${url}/repos/${repository}/issues`, {
       method: "POST",
-      headers,
+      headers: this.headers,
       body: JSON.stringify(body)
     });
   }
