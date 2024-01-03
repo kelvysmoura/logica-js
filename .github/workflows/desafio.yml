@@ -25,9 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug
-        run: echo 'debug'
-
       - name: Setup
         run: |
           if [ -f $KMP_FILE_EXECUTE ]; then
