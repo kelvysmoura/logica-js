@@ -35,6 +35,15 @@ jobs:
           if [ "$KMP_CURRENT_COMMIT" == "$KMP_INITIAL_COMMIT" ]; then
             node $KMP_SETTING_REPOSITORY/create-issues.js
           fi
+
+      - name: Debug
+        run: |
+          git log --format="Commit atual: %H%nCommit pai:%P%nCommit msg: %s" -n 1 $GITHUB_SHA >> $GITHUB_STEP_SUMMARY
+          echo '<hr>' >> $GITHUB_STEP_SUMMARY
+          git rev-list --max-parents=0 HEAD >> $GITHUB_STEP_SUMMARY
+          echo '<hr>' >> $GITHUB_STEP_SUMMARY
+          env >> env.txt 
+          cat env.txt >> $GITHUB_STEP_SUMMARY
           
       
     
