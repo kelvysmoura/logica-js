@@ -21,17 +21,21 @@ jobs:
       - name: Export initial commit
         run: | 
           export KMP_INITIAL_COMMIT=$(git rev-list --max-parents=0 HEAD)
+          export KMP_CURRENT_COMMIT=$(git log --format="%H" -n 1 $GITHUB_SHA)
           echo "KMP_INITIAL_COMMIT=$KMP_INITIAL_COMMIT" >> $GITHUB_ENV
+          echo "KMP_CURRENT_COMMIT=$KMP_CURRENT_COMMIT" >> $GITHUB_ENV
           
-      - name: Branch protection
-        run: node $KMP_SETTING_REPOSITORY/branch-protection.js
+      #- name: Branch protection
+      #  run: node $KMP_SETTING_REPOSITORY/branch-protection.js
       
-      - name: Create issues 
-        run: node $KMP_SETTING_REPOSITORY/create-issues.js
+      #- name: Create issues
+      #  run: node $KMP_SETTING_REPOSITORY/create-issues.js
 
       - name: Debug
         run: |
-          git log --format="Commit atual: %H%nCommit pai:%P%nCommit msg: %s%nAnotações de quem fez o commit:%N%n" -n 1 $GITHUB_SHA >> $GITHUB_STEP_SUMMARY
+          git log --format="Commit atual: %H%nCommit pai:%P%nCommit msg: %s" -n 1 $GITHUB_SHA >> $GITHUB_STEP_SUMMARY
+          echo '<hr>' >> $GITHUB_STEP_SUMMARY
+          echo ${{ env.KMP_CURRENT_COMMIT }} >> $GITHUB_STEP_SUMMARY
           echo '<hr>' >> $GITHUB_STEP_SUMMARY
           git rev-list --max-parents=0 HEAD >> $GITHUB_STEP_SUMMARY
           echo '<hr>' >> $GITHUB_STEP_SUMMARY
