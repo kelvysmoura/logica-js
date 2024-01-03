@@ -6,6 +6,7 @@ jobs:
   
   setting:
     name: "Settings"
+    if: github.ref_name == 'master'
     runs-on: ubuntu-latest
     env:
       KMP_SETTING_REPOSITORY: "${{ github.workspace }}/.github/setting-respository"
@@ -18,18 +19,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Export initial commit
+      - name: Export commit
         run: | 
           export KMP_INITIAL_COMMIT=$(git rev-list --max-parents=0 HEAD)
           export KMP_CURRENT_COMMIT=$(git log --format="%H" -n 1 $GITHUB_SHA)
-          echo "KMP_INITIAL_COMMIT=$KMP_INITIAL_COMMIT" >> $GITHUB_ENV
-          echo "KMP_CURRENT_COMMIT=$KMP_CURRENT_COMMIT" >> $GITHUB_ENV
           
-      #- name: Branch protection
-      #  run: node $KMP_SETTING_REPOSITORY/branch-protection.js
+      - name: Branch protection
+        run: |
+          if [ "$KMP_CURRENT_COMMIT" == "$KMP_INITIAL_COMMIT" ]; then
+            node $KMP_SETTING_REPOSITORY/branch-protection.js
+          fi
       
-      #- name: Create issues
-      #  run: node $KMP_SETTING_REPOSITORY/create-issues.js
+      - name: Create issues
+        run: |
+          if [ "$KMP_CURRENT_COMMIT" == "$KMP_INITIAL_COMMIT" ]; then
+            node $KMP_SETTING_REPOSITORY/create-issues.js
+          fi
 
       - name: Debug
         run: |
