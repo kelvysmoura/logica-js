@@ -47,7 +47,7 @@ const mdmsg = {
     return msg;
   },
 
-  warning(msg = "Algo de erro não está certo") {
+  warning(msg = "Algo de errado não está certo") {
     return `${warningIcon} ${msg}`
   },
 
