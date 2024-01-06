@@ -68,7 +68,6 @@ const mdmsg = {
   },
 
   exit(msg, code = 1) {
-    code = 0;
     console.log(msg)
     process.exit(code)
   }
