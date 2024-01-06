@@ -25,6 +25,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+        
+      - name: NPM install
+        run: npm install
+
       - name: Setup
         run: |
           if [ -f $KMP_FILE_EXECUTE ]; then
@@ -34,14 +42,11 @@ jobs:
 
       - name: Run tests
         run: node $KMP_FILE_TEST >> $GITHUB_STEP_SUMMARY
-
-      - name: Change pull request description
-        uses: Beakyn/gha-comment-pull-request@v1.0.2
-        with:
-          delete-previous-comment: true
-          description-message: ${{ github.env.GITHUB_STEP_SUMMARY }}
-          comment-message: ${{ github.env.GITHUB_STEP_SUMMARY }}
-
+      
+      - name: DEBUG
+        run: |
+          env >> env.txt 
+          cat env.txt >> $GITHUB_STEP_SUMMARY
       
 
       
