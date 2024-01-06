@@ -13,7 +13,7 @@ const api = require('./api');
       const statusCode = parseInt(request.status);
 
       const json = await request.json();
-      json.HEADERS = request.headers
+      json.HEADERS = Array.from(request.headers)
 
       if (statusCode < 200 || statusCode > 299) {
         throw new Error(JSON.stringify(json));
