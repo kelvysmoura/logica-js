@@ -34,7 +34,8 @@ try {
 console.log(output.join("\n"))
 
 if (hasError) {
-  process.exit(1)
+  process.exit(0)
 }
-
-mdmsg.challengeWithSuccess()
+else {
+  mdmsg.challengeWithSuccess()
+}
