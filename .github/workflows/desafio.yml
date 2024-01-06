@@ -43,11 +43,6 @@ jobs:
       - name: Run tests
         run: node $KMP_FILE_TEST >> $GITHUB_STEP_SUMMARY
       
-      - name: DEBUG
-        run: |
-          env >> env.txt 
-          cat env.txt >> $GITHUB_STEP_SUMMARY
-      
 
       
       
