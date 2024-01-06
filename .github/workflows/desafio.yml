@@ -35,6 +35,13 @@ jobs:
       - name: Run tests
         run: node $KMP_FILE_TEST >> $GITHUB_STEP_SUMMARY
 
+      - name: Change pull request description
+        uses: Beakyn/gha-comment-pull-request@v1.0.2
+        with:
+          delete-previous-comment: true
+          description-message: ${{ github.env.GITHUB_STEP_SUMMARY }}
+          comment-message: ${{ github.env.GITHUB_STEP_SUMMARY }}
+
       
 
       
