@@ -17,6 +17,7 @@ jobs:
       KMP_BRACHES_MERGE_MASTER: "hello,soma,soma_impar,inverte_lista,vogais,fatorial,apenas_par,temperatura,palindromo,inverte_soma_itens,cartaodecredito,cpf"
       KMP_SETUP_JS: "${{ github.workspace }}/.github/desafio/setup.js"
       KMP_FILE_TEST: "${{ github.workspace }}/.github/desafio/${{ github.head_ref }}.test.js"
+      KMP_DEFAULT_FILE_TEST: "${{ github.workspace }}/.github/desafio/default.test.js"
       KMP_FILE_EXECUTE: "${{ github.workspace }}/src/${{ github.head_ref }}.js"
 
     steps:
@@ -32,7 +33,12 @@ jobs:
           node $KMP_SETUP_JS >> $GITHUB_STEP_SUMMARY
 
       - name: Run tests
-        run: node $KMP_FILE_TEST >> $GITHUB_STEP_SUMMARY
+        run: |
+          if [ -f $KMP_FILE_TEST ]; then
+            node $KMP_FILE_TEST >> $GITHUB_STEP_SUMMARY
+          else
+            node $KMP_DEFAULT_FILE_TEST >> $GITHUB_STEP_SUMMARY
+          fi
       
 
       
