@@ -21,7 +21,7 @@ const api = require('./api');
 
       console.log(json)
 
-      await (new Promise(resolve => setTimeout(resolve, 2000)))
+      await (new Promise(resolve => setTimeout(resolve, 5000)))
     }
 
   } catch (error) {
