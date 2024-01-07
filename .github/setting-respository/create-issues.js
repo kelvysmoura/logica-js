@@ -9,19 +9,21 @@ const api = require('./api');
 
     for (let item of issuesPayload) {
 
-      const request = await api.createIssue(item);  
-      const statusCode = parseInt(request.status);
+      let st = setTimeout(async () => {
+        const request = await api.createIssue(item)
 
-      const json = await request.json();
-      json.HEADERS = Array.from(request.headers)
+        const statusCode = parseInt(request.status);
 
-      if (statusCode < 200 || statusCode > 299) {
-        throw new Error(JSON.stringify(json));
-      }
+        const json = await request.json();
+        json.HEADERS = Array.from(request.headers)
 
-      console.log(json)
+        if (statusCode < 200 || statusCode > 299) {
+          throw new Error(JSON.stringify(json));
+        }
 
-      await (new Promise(resolve => setTimeout(resolve, 5000)))
+        console.log(json)
+      }, 5000)
+
     }
 
   } catch (error) {
