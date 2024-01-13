@@ -1,4 +1,4 @@
-function hellos(frase = "World") {
+function hello(frase = "World") {
 
     if (typeof frase != "string") {
         frase = "World";
